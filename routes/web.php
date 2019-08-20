@@ -11,6 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::post('/books', 'BooksController@store');
+
+//{book} matches the argument $book in update function in BooksController
+Route::patch('/books/{book}', 'BooksController@update');
+
+Route::delete('/books/{book}', 'BooksController@destroy');
+
